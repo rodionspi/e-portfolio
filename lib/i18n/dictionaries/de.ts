@@ -171,6 +171,10 @@ export const de: Dictionary = {
         description: "Die zweite private Datei öffnen",
       },
     },
+    cv: {
+      label: "Lebenslauf",
+      value: "Meinen Lebenslauf herunterladen",
+    },
     errors: {
       generic: "Zugang konnte nicht geöffnet werden",
       invalidPassword: "Falsches Passwort",

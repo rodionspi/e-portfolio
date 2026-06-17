@@ -1,8 +1,11 @@
 "use client"
 
 import { useEffect, useState, type FormEvent } from "react"
-import { Lock, Unlock } from "lucide-react"
+import { ArrowUpRight, FileText, Lock, Mail, Send, Unlock } from "lucide-react"
 import { useI18n } from "@/lib/i18n/provider"
+import { Reveal } from "../motion"
+import { SectionHeading } from "../section-heading"
+import { profile } from "@/lib/data"
 
 const ACCESS_COOKIE = "protected_access"
 
@@ -50,7 +53,13 @@ export function ProtectedFiles() {
 
     setError(result?.error ?? t.protectedFiles.errors.generic)
     setLoading(false)
-  }
+  };
+
+    const links = [
+        { label: t.contact.email, value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
+        { label: t.contact.telegram, value: profile.telegramHandle, href: profile.telegram, Icon: Send },
+        { label: t.protectedFiles.cv.label, value: t.protectedFiles.cv.value, href: "", Icon: FileText, download: true }
+    ]
 
   return (
     <section className="mx-auto max-w-5xl px-4 pb-20">
@@ -93,21 +102,31 @@ export function ProtectedFiles() {
               <Unlock className="h-4 w-4" />
               {t.protectedFiles.success}
             </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <a
-                href="/api/private-files/confidential-notes.txt"
-                className="rounded-2xl border border-border bg-card/80 p-4 transition-colors hover:bg-accent"
-              >
-                <p className="font-medium">{t.protectedFiles.files.confidential.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{t.protectedFiles.files.confidential.description}</p>
-              </a>
-              <a
-                href="/api/private-files/important-info.txt"
-                className="rounded-2xl border border-border bg-card/80 p-4 transition-colors hover:bg-accent"
-              >
-                <p className="font-medium">{t.protectedFiles.files.important.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{t.protectedFiles.files.important.description}</p>
-              </a>
+            <div className="mx-auto max-w-5xl">
+                <div className="grid gap-4 sm:grid-cols-2">
+                {links.map(({ label, value, href, Icon, download }, i) => (
+                    <Reveal key={label} delay={i * 0.06}>
+                    <a
+                        href={href}
+                        target={download || href.startsWith("mailto") ? undefined : "_blank"}
+                        rel="noopener noreferrer"
+                        download={download ? "Lebenslauf.pdf" : undefined}
+                        className="group flex items-center justify-between rounded-2xl border border-border bg-card/60 p-5 transition-colors hover:border-primary/40"
+                    >
+                        <div className="flex items-center gap-4">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                            <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                            <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
+                            <p className="font-medium">{value}</p>
+                        </div>
+                        </div>
+                        <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                    </a>
+                    </Reveal>
+                ))}
+                </div>
             </div>
           </div>
         )}

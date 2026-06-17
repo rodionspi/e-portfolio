@@ -10,10 +10,8 @@ export function Contact() {
   const { t } = useI18n()
 
   const links = [
-    { label: t.contact.email, value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
     { label: t.contact.linkedin, value: "rodion-spiridonov", href: profile.linkedin, Icon: Briefcase },
     { label: t.contact.github, value: profile.githubUser, href: profile.github, Icon: Code2 },
-    { label: t.contact.telegram, value: profile.telegramHandle, href: profile.telegram, Icon: Send },
   ]
 
   return (

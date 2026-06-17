@@ -169,6 +169,10 @@ export const en = {
         description: "Open the second private file",
       },
     },
+    cv: {
+      label: "CV",
+      value: "Download my CV",
+    },
     errors: {
       generic: "Could not unlock access",
       invalidPassword: "Incorrect password",
