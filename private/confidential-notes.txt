@@ -1,0 +1,2 @@
+This is a sample private file.
+Replace it with your real confidential document if you want.

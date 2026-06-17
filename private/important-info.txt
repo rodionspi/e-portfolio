@@ -1,0 +1,2 @@
+This is another sample private file.
+You can replace it with your own sensitive content.
