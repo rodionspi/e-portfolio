@@ -61,7 +61,7 @@ export const projectsMeta = [
     tech: ["TypeScript", "Tailwind CSS", "Figma"],
   },
   {
-    id: "Trattoria ",
+    id: "trattoria",
     github: "https://github.com/rodionspi/trattoria-osvaldo",
     website: "https://trattoria-osvaldo.vercel.app/en",
     tech: ["TypeScript", "Tailwind CSS", "Figma"],

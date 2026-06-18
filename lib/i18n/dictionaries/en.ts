@@ -9,6 +9,7 @@ export const en = {
     resume: "Download CV",
     menu: "Open menu",
     theme: "Toggle theme",
+    modules: "Modules",
   },
   hero: {
     badge: "Available for an IT apprenticeship",
@@ -95,6 +96,12 @@ export const en = {
         description: "Business website developed pixel-perfect from a Figma design.",
         features: ["Figma to code", "Responsive layout", "Performance focused"],
         highlight: "Frontend built independently",
+      },
+      trattoria: {
+        title: "Trattoria Osvaldo Website",
+        description: "Restaurant website built from a Figma design with responsive layout and multilingual support.",
+        features: ["Responsive design", "Menu management", "Multi-language support"],
+        highlight: "Client collaboration",
       },
     },
   },

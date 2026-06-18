@@ -11,6 +11,7 @@ export const fr: Dictionary = {
     resume: "Télécharger le CV",
     menu: "Ouvrir le menu",
     theme: "Changer le thème",
+    modules: "Modules",
   },
   hero: {
     badge: "Disponible pour un stage en informatique",
@@ -97,6 +98,12 @@ export const fr: Dictionary = {
         description: "Site web professionnel développé au pixel près à partir d'une maquette Figma.",
         features: ["De Figma au code", "Mise en page responsive", "Axé sur la performance"],
         highlight: "Frontend réalisé en autonomie",
+      },
+      trattoria: {
+        title: "Site Trattoria Osvaldo",
+        description: "Site web pour un restaurant, réalisé à partir d'une maquette Figma avec design responsive et support multilingue.",
+        features: ["Design responsive", "Gestion du menu", "Support multilingue"],
+        highlight: "Collaboration client",
       },
     },
   },

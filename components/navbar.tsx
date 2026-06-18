@@ -28,14 +28,15 @@ export function Navbar() {
     { href: "#projects", label: t.nav.projects },
     { href: "#github", label: t.nav.github },
     { href: "#contact", label: t.nav.contact },
+    { href: "https://sites.google.com/view/rodions/start", label: t.nav.modules },
   ]
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav
         className={cn(
-          "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300",
-          scrolled ? "glass border-border shadow-sm" : "border-transparent bg-transparent",
+          "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 bg-white transition-all duration-300",
+          scrolled ? "border-border shadow-sm" : "border-transparent",
         )}
       >
         <a href="#top" className="flex items-center gap-2 pl-1 font-heading text-sm font-semibold tracking-tight">
@@ -85,7 +86,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="glass absolute top-20 z-40 w-[calc(100%-2rem)] max-w-5xl rounded-2xl border border-border p-3 lg:hidden"
+            className="bg-white absolute top-20 z-40 w-[calc(100%-2rem)] max-w-5xl rounded-2xl border border-border p-3 lg:hidden"
           >
             <div className="flex flex-col">
               {links.map((l) => (

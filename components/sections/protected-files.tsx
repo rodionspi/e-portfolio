@@ -102,7 +102,7 @@ export function ProtectedFiles() {
               <Unlock className="h-4 w-4" />
               {t.protectedFiles.success}
             </div>
-            <div className="mx-auto max-w-5xl">
+            <div className="mx-auto max-w-5xl mt-6">
                 <div className="grid gap-4 sm:grid-cols-2">
                 {links.map(({ label, value, href, Icon, download }, i) => (
                     <Reveal key={label} delay={i * 0.06}>

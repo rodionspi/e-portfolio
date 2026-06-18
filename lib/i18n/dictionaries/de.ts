@@ -11,6 +11,7 @@ export const de: Dictionary = {
     resume: "CV herunterladen",
     menu: "Menü öffnen",
     theme: "Design wechseln",
+    modules: "Module",
   },
   hero: {
     badge: "Verfügbar für ein Informatik-Praktikum",
@@ -97,6 +98,12 @@ export const de: Dictionary = {
         description: "Business-Website, pixelgenau aus einem Figma-Design umgesetzt.",
         features: ["Figma zu Code", "Responsive Layout", "Performance-orientiert"],
         highlight: "Frontend eigenständig umgesetzt",
+      },
+      trattoria: {
+        title: "Trattoria Osvaldo Website",
+        description: "Website für ein Restaurant, umgesetzt aus einem Figma-Design mit responsive Layout und mehrsprachiger Unterstützung.",
+        features: ["Responsive Design", "Menü-Verwaltung", "Mehrsprachigkeit"],
+        highlight: "Kundenprojekt",
       },
     },
   },

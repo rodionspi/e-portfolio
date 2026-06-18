@@ -17,6 +17,7 @@ export function Projects() {
         <div className="grid gap-6 md:grid-cols-2">
           {projectsMeta.map((meta, i) => {
             const p = t.projects.items[meta.id as keyof typeof t.projects.items]
+            if (!p) return null
             return (
               <motion.article
                 key={meta.id}
