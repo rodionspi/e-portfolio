@@ -72,8 +72,8 @@ export function Hero() {
               <ArrowDown className="h-4 w-4" />
             </a>
             <a
-              href={profile.cv}
-              download
+              href={t.protectedFiles.cv.label}
+              download={"Lebenslauf.pdf"}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-medium transition-colors hover:bg-accent"
             >
               <Download className="h-4 w-4" />

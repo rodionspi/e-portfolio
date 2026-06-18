@@ -61,8 +61,8 @@ export function Navbar() {
           <LanguageSwitcher />
           <ThemeToggle />
           <a
-            href={profile.cv}
-            download
+            href={t.protectedFiles.cv.label}
+            download={"Lebenslauf.pdf"}
             className="hidden items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:flex"
           >
             <Download className="h-3.5 w-3.5" />
@@ -99,8 +99,8 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href={profile.cv}
-                download
+                href={t.protectedFiles.cv.label}
+                download={"Lebenslauf.pdf"}
                 onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-1.5 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               >

@@ -45,7 +45,7 @@ export const projectsMeta = [
   {
     id: "telegram",
     github: "https://github.com/rodionspi/post_generator",
-    website: null,
+    website: "https://t.me/tgc_post_generator_bot",
     tech: ["Python", "Telegram Bot API", "Groq LLM"],
   },
   {
@@ -58,6 +58,12 @@ export const projectsMeta = [
     id: "lusd",
     github: "https://github.com/rodionspi/LUSD",
     website: "https://lusd.vercel.app",
+    tech: ["TypeScript", "Tailwind CSS", "Figma"],
+  },
+  {
+    id: "Trattoria ",
+    github: "https://github.com/rodionspi/trattoria-osvaldo",
+    website: "https://trattoria-osvaldo.vercel.app/en",
     tech: ["TypeScript", "Tailwind CSS", "Figma"],
   },
 ] as const
