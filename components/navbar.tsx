@@ -35,7 +35,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav
         className={cn(
-          "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 bg-white transition-all duration-300",
+          "flex w-full max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 bg-background transition-all duration-300",
           scrolled ? "border-border shadow-sm" : "border-transparent",
         )}
       >
@@ -86,7 +86,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="bg-white absolute top-20 z-40 w-[calc(100%-2rem)] max-w-5xl rounded-2xl border border-border p-3 lg:hidden"
+            className="absolute top-20 z-40 w-[calc(100%-2rem)] max-w-5xl rounded-2xl border border-border bg-background p-3 lg:hidden"
           >
             <div className="flex flex-col">
               {links.map((l) => (
