@@ -180,6 +180,10 @@ export const en = {
       label: "CV",
       value: "Download my CV",
     },
+    certificates: {
+      label: "Certificates",
+      value: "Download my certificates",
+    },
     errors: {
       generic: "Could not unlock access",
       invalidPassword: "Incorrect password",

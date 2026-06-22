@@ -182,6 +182,10 @@ export const de: Dictionary = {
       label: "Lebenslauf",
       value: "Meinen Lebenslauf herunterladen",
     },
+    certificates: {
+      label: "Zeugnisse",
+      value: "Meine Zeugnisse herunterladen",
+    },
     errors: {
       generic: "Zugang konnte nicht geöffnet werden",
       invalidPassword: "Falsches Passwort",

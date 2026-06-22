@@ -182,6 +182,10 @@ export const fr: Dictionary = {
       label: "CV",
       value: "Télécharger mon CV",
     },
+    certificates: {
+      label: "Certificats",
+      value: "Télécharger mes certificats",
+    },
     errors: {
       generic: "Impossible d'ouvrir l'accès",
       invalidPassword: "Mot de passe incorrect",

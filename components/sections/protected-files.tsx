@@ -4,10 +4,29 @@ import { useEffect, useState, type FormEvent } from "react"
 import { ArrowUpRight, FileText, Lock, Mail, Send, Unlock } from "lucide-react"
 import { useI18n } from "@/lib/i18n/provider"
 import { Reveal } from "../motion"
-import { SectionHeading } from "../section-heading"
 import { profile } from "@/lib/data"
 
 const ACCESS_COOKIE = "protected_access"
+const protectedFileLinks = [
+  {
+    labelKey: "cv",
+    value: "Lebenslauf.pdf",
+    href: "/cv/Lebenslauf.pdf",
+    download: "Lebenslauf.pdf",
+  },
+  {
+    labelKey: "certificates",
+    value: "Zeugnis 2024-1",
+    href: "/certificates/20250121_Zeugnis_2024-1_I1b_SpiridonovRodion.pdf",
+    download: "20250121_Zeugnis_2024-1_I1b_SpiridonovRodion.pdf",
+  },
+  {
+    labelKey: "certificates",
+    value: "Zeugnis 2024-2",
+    href: "/certificates/20250626_Zeugnis_2024-2_I1b_SpiridonovRodion.pdf",
+    download: "20250626_Zeugnis_2024-2_I1b_SpiridonovRodion.pdf",
+  },
+] as const
 
 function hasAccessCookie() {
   if (typeof document === "undefined") {
@@ -53,13 +72,19 @@ export function ProtectedFiles() {
 
     setError(result?.error ?? t.protectedFiles.errors.generic)
     setLoading(false)
-  };
+  }
 
-    const links = [
-        { label: t.contact.email, value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
-        { label: t.contact.telegram, value: profile.telegramHandle, href: profile.telegram, Icon: Send },
-        { label: t.protectedFiles.cv.label, value: t.protectedFiles.cv.value, href: "", Icon: FileText, download: true }
-    ]
+  const links = [
+    { label: t.contact.email, value: profile.email, href: `mailto:${profile.email}`, Icon: Mail },
+    { label: t.contact.telegram, value: profile.telegramHandle, href: profile.telegram, Icon: Send },
+    ...protectedFileLinks.map((file) => ({
+      label: t.protectedFiles[file.labelKey].label,
+      value: file.value,
+      href: file.href,
+      Icon: FileText,
+      download: file.download,
+    })),
+  ]
 
   return (
     <section className="mx-auto max-w-5xl px-4 pb-20">
@@ -105,12 +130,12 @@ export function ProtectedFiles() {
             <div className="mx-auto max-w-5xl mt-6">
                 <div className="grid gap-4 sm:grid-cols-2">
                 {links.map(({ label, value, href, Icon, download }, i) => (
-                    <Reveal key={label} delay={i * 0.06}>
+                    <Reveal key={href} delay={i * 0.06}>
                     <a
                         href={href}
                         target={download || href.startsWith("mailto") ? undefined : "_blank"}
                         rel="noopener noreferrer"
-                        download={download ? "Lebenslauf.pdf" : undefined}
+                        download={download}
                         className="group flex items-center justify-between rounded-2xl border border-border bg-card/60 p-5 transition-colors hover:border-primary/40"
                     >
                         <div className="flex items-center gap-4">
