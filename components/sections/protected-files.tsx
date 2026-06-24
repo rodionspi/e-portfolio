@@ -87,7 +87,7 @@ export function ProtectedFiles() {
   ]
 
   return (
-    <section className="mx-auto max-w-5xl px-4 pb-20">
+    <section id="protected-files" className="mx-auto max-w-5xl px-4 pb-20 scroll-mt-28">
       <div className="rounded-3xl border border-border bg-card/70 p-6 shadow-sm backdrop-blur sm:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
