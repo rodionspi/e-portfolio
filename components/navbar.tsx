@@ -99,7 +99,8 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#protected-files"
+                href={t.protectedFiles.cv.label}
+                download={"Lebenslauf.pdf"}
                 onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-1.5 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               >
